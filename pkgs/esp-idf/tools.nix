@@ -29,6 +29,7 @@ let
   # Map nix system strings to the platforms listed in tools.json
   systemToToolPlatformString = {
     "x86_64-linux" = "linux-amd64";
+    "aarch64-linux" = "linux-arm64";
     "x86_64-darwin" = "macos";
     "aarch64-darwin" = "macos-arm64";
   };
