@@ -90,7 +90,7 @@ let
       phases = [ "unpackPhase" "installPhase" ];
 
       installPhase = let
-        wrapCmd = if system == "x86_64-linux" then
+        wrapCmd = if (system == "x86_64-linux") || (system == "aarch64-linux") then
         ''
           mv $FILE_PATH $FILE_PATH-unwrapped
           makeWrapper ${fhsEnv}/bin/${pname}-env $FILE_PATH --add-flags "$FILE_PATH-unwrapped" ${lib.strings.concatStringsSep " " exportVarsWrapperArgsList}
